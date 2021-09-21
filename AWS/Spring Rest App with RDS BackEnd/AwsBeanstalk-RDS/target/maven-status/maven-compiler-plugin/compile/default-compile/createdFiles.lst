@@ -1,0 +1,6 @@
+com\cognizant\AwsBeanstalk\RDS\Controller\EmployeeResource.class
+com\cognizant\AwsBeanstalk\RDS\Application.class
+com\cognizant\AwsBeanstalk\RDS\Service\EmployeeService.class
+com\cognizant\AwsBeanstalk\RDS\ServiceImpl\EmployeServiceImpl.class
+com\cognizant\AwsBeanstalk\RDS\Beans\Employee.class
+com\cognizant\AwsBeanstalk\RDS\Repositry\EmployeeRepositry.class
