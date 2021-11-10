@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+        
+        <bean id="opBean" class="com.learn.SpringAOP.Operation"></bean>
+         <bean id="trackMyBean" class="com.learn.SpringAOP.TrackOperation"></bean>
+          <bean id="calc" class="com.learn.SpringAOP.Calculator"></bean>
+          
+          <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"></bean>
+        
+        
+</beans>

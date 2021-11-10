@@ -1,0 +1,73 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <context:annotation-config/>
+        
+        <bean id="dept" class="com.learn.springdemo.next.Department">
+        <constructor-arg value="11" />
+        <constructor-arg value="Academy" />
+        </bean>
+        
+        <bean id="department" class="com.learn.springdemo.next.Employee">
+        <property name="employeeId" value="1212" />
+        <property name="employeeName" value="Munna Bhaiya" />
+        <property name="salary" value="12000" />
+        </bean>
+        
+         <bean id="depart" class="com.learn.springdemo.next.Department">
+        <constructor-arg value="133" />
+        <constructor-arg value="Management" />
+        </bean>
+        
+        <bean id="emp1" class="com.learn.springdemo.next.Employee">
+        <property name="employeeId" value="1233" />
+        <property name="employeeName" value="Mansood" />
+        <property name="salary" value="14099" />
+        </bean>
+        
+        <!-- SimpleDateFormat formatter = new SimpleDateFormat() -->
+        <bean id="formatter" class="java.text.SimpleDateFormat">
+        <constructor-arg value="dd/MM/yyyy" />
+        </bean>
+        
+        <bean id="dom" factory-method="parse" factory-bean="formatter">
+        	<constructor-arg value="30/12/2020"/>
+        </bean>
+        
+        <bean id="product1" class="com.learn.springdemo.next.Product">
+        <property name="productId" value="121" />
+        <property name="productName" value="Water Color" />
+        <property name="price" value="120" />
+        <property name="dateOfManufacture" ref="dom"></property>
+        </bean>
+        
+        <!--  <bean id="product2" class="com.learn.springdemo.next.Product">
+        <property name="productId" value="101" />
+        <property name="productName" value="Colors" />
+        <property name="price" value="100" />
+        <property name="dateOfManufacture" ref="today" />
+        </bean>-->
+        
+        <bean id="product3" class="com.learn.springdemo.next.Product">
+        <property name="productId" value="102" />
+        <property name="productName" value="Crayons" />
+        <property name="price" value="150" />
+        <property name="dateOfManufacture">
+        	<bean factory-method="parse" factory-bean="formatter">
+        		<constructor-arg value="28/11/2020" />
+        	</bean>
+        </property>
+        </bean>
+        
+        <bean id="today" class="java.util.Date"></bean>
+        <bean id="date1" class="java.time.LocalDate" factory-method="parse">
+        	<constructor-arg value="2021-08-12" />
+        </bean>
+        
+        
+</beans>
