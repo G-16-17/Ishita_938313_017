@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="question1" class="com.learn.mavendemo.model.Question">
+<property name="questionId" value="1" />
+<property name="questionText" value="What is Constructor?" />
+<property name="answer" >
+
+	<list>
+		<value>Constructor is having same name as class name</value>
+		<value>Constructor can be overloaded</value>
+		<value>Used to initialize the instance of the variable</value>
+
+	</list>
+	</property>
+</bean>
+
+<bean id="question2" class="com.learn.mavendemo.model.Question">
+<property name="questionId" value="2" />
+<property name="questionText" value="List java features" />
+<property name="answer" >
+
+	<list>
+		<value>OOPs Language</value>
+		<value>Platform Independent</value>
+		<value>Multi-threaded</value>
+
+	</list>
+	</property>
+</bean>
+
+<bean id="item1" class="com.learn.mavendemo.model.MenuItem">
+	<constructor-arg name="id" value="22" />
+	<constructor-arg name="name" value="Pizza" />
+	<constructor-arg name="price" value="149" />
+</bean>
+
+<bean id="item2" class="com.learn.mavendemo.model.MenuItem">
+	<constructor-arg name="id" value="11" />
+	<constructor-arg name="name" value="Idli" />
+	<constructor-arg name="price" value="49" />
+</bean>
+
+<bean id="cart1" class="com.learn.mavendemo.model.Cart">
+	<constructor-arg name="id" value="22" />
+	<constructor-arg name="user" value="Tom" />
+	
+</bean>
+</beans>

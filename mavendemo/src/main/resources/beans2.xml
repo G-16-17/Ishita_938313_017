@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+<bean id="department1" class="com.learn.mavendemo.Department">
+        <property name="departmentId" value="10" />
+        <property name="departmentName" value="Sales" />
+</bean>
+
+<bean id="department" class="com.learn.mavendemo.Department">
+        <property name="departmentId" value="20" />
+        <property name="departmentName" value="Science" />
+</bean>
+
+<bean id="employee1" class="com.learn.mavendemo.Employee">
+<constructor-arg name="employeeId" value="1001"/>
+<constructor-arg name="employeeName" value="Jerry"/>
+<constructor-arg name="salary" value="15000"/>
+<constructor-arg name="department" ref="department1"/>
+</bean>
+
+<bean id="employee2" class="com.learn.mavendemo.Employee" autowire="byName">
+<property name="employeeId" value="1002"/>
+<property name="employeeName" value="Thomas"/>
+<property name="salary" value="15000"/>
+</bean>
+
+<bean id="employee3" class="com.learn.mavendemo.Employee" autowire="constructor">
+<constructor-arg name="employeeId" value="1003"/>
+<constructor-arg name="employeeName" value="Oggy"/>
+<constructor-arg name="salary" value="25000"/>
+</bean>
+       
+</beans>
